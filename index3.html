@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="styles/kendo.mobile.all.min.css">
+    <script src="scripts/jquery-1.11.0.js"></script>
+    <script src="scripts/kendo.mobile.min.js"></script>
+</head>
+<body>
+   
+      <div data-role="layout" data-id="defaultLayout">
+      <header data-role="header">
+        <div data-role="navbar">
+          My first application
+        </div>
+      </header>
+      <footer data-role="footer">
+        <div data-role="tabstrip">
+                <a data-icon="about">About</a>
+                <a data-icon="settings">Settings</a>
+            </div>
+      </footer>
+    </div>
+
+ 
+    <div data-role="view" id="loginview" data-layout="defaultLayout">
+        Login page
+    </div>
+
+    <div data-role="view" id="signupview" data-layout="defaultLayout">
+        Sign Up page
+    </div>
+
+    <div data-role="view" id="index" data-layout="defaultLayout">
+        <span class="button" data-role="button" id="login">Login</span>
+        <span class="button" data-role="button" id="signup">Sign Up </span>
+    </div> 
+ 
+<script>
+    var app = new kendo.mobile.Application(document.body, {
+        initial: "index",
+        platform: "ios"
+    });
+
+    $('#login').on('click', function (event) {
+        app.navigate('#loginview');
+    });
+
+    $('#signup').on('click', function (event) {
+        app.navigate('#signupview');
+    });
+
+</script>
+</body>
+</html>
